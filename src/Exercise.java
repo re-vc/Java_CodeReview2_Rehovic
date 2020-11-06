@@ -3,10 +3,10 @@ public class Exercise {
     public String name;
     public String description;
     public int duration;
-    public String position;
+    public boolean position;
 
     // constructor
-    public Exercise(String name, String description, int duration, String position){
+    public Exercise(String name, String description, int duration, boolean position){
 
         this.name = name;
         this.description = description;
@@ -21,13 +21,18 @@ public class Exercise {
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", duration=" + duration +
-                ", position='" + position + '\'' +
+                ", position=" + position +
                 '}';
     }
+
     public void printFormat(){
         System.out.println(name + "          DURATION: " + duration + " seconds.");
         System.out.println("--------------------------------------------------");
         System.out.println("DESCRIPTION: " + description);
-        System.out.println("POSITION : " + position);
+        if (position == true){
+            System.out.println("POSITION: " + "Standing");
+        } else {
+            System.out.println("POSITION: " + "Floor");
+        }
     }
 }
